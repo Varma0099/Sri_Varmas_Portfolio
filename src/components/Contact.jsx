@@ -2,7 +2,7 @@
  * Contact page component (JSX)
  * @module Contact
  */
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Mail, Phone, MapPin, Github, Linkedin } from 'lucide-react';
 

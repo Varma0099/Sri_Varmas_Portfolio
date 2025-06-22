@@ -7,6 +7,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Globe, Database, Zap, Smartphone, Code, Download, Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import profileImage from '../assets/profile.jpg';
 
+// Project images will be served from public folder
+
 const Home = () => {
   // Animation variants
   const containerVariants = {
@@ -227,8 +229,8 @@ const Home = () => {
                 title: "QGenie: AI-Based Question Paper Generator",
                 description: "Built an AI-powered tool to generate question papers based on Bloom's Taxonomy. Integrated Flask backend with HTML/JavaScript frontend for seamless user interaction.",
                 tech: ["Gemini API", "Python", "Flask", "HTML", "JavaScript"],
-                image: "/src/assets/projects/qgenie-screenshot.png",
-                liveUrl: "#",
+                image: "📝", // Placeholder until image is added
+                liveUrl: "#", // Add live URL when available
                 features: ["AI-Powered Generation", "Bloom's Taxonomy", "Flask Backend", "Interactive Frontend"],
                 status: "Live"
               },
@@ -236,8 +238,8 @@ const Home = () => {
                 title: "Basketball Highlight Auto-Cropper",
                 description: "Created a tool to process basketball videos into 9:16 format for social media. Utilized OpenCV for automated video cropping and highlight extraction.",
                 tech: ["OpenCV", "Python", "NumPy"],
-                image: "/src/assets/projects/basketball-cropper.png",
-                liveUrl: "#",
+                image: "🏀", // Placeholder until image is added
+                liveUrl: "#", // Add live URL when available
                 features: ["Video Processing", "Auto Cropping", "9:16 Format", "Highlight Extraction"],
                 status: "Live"
               },
@@ -245,7 +247,7 @@ const Home = () => {
                 title: "Hospo: AI-Powered Healthcare Platform",
                 description: "Comprehensive healthcare solution with appointment scheduling, telemedicine, and AI analytics. Developed ML models for disease prediction and medicine tracking system.",
                 tech: ["React.js", "Node.js", "Python", "Machine Learning", "Data Analytics"],
-                image: "/src/assets/projects/hospo-platform.png",
+                image: "/projects/hospo-platform.png",
                 liveUrl: "https://hospo-ten.vercel.app/",
                 features: ["Appointment Scheduling", "Telemedicine", "AI Analytics", "Disease Prediction"],
                 status: "Live"
@@ -254,7 +256,7 @@ const Home = () => {
                 title: "Nxt Watch (YouTube Clone)",
                 description: "Developed a YouTube alternative with user authentication, video browsing by categories (Trending, Gaming), and saved videos functionality. Implemented secure login with JWT tokens.",
                 tech: ["React.js", "JavaScript", "CSS", "Bootstrap", "React Router", "REST API", "JWT"],
-                image: "/src/assets/projects/nxtwatch-clone.png",
+                image: "/projects/nxtwatch-clone.png",
                 liveUrl: "https://varmanxtwatch9.ccbp.tech/",
                 features: ["User Authentication", "Video Categories", "Saved Videos", "JWT Security"],
                 status: "Live"
@@ -263,7 +265,7 @@ const Home = () => {
                 title: "Tasty Kitchens (Swiggy/Zomato Clone)",
                 description: "Built food delivery platform with restaurant listings, shopping cart, and checkout functionality. Created responsive UI with React Slick carousel and Figma-based component design.",
                 tech: ["React.js", "JavaScript", "CSS", "Bootstrap", "React Slick", "Figma", "REST API"],
-                image: "/src/assets/projects/tasty-kitchens.png",
+                image: "/projects/tasty-kitchens.png",
                 liveUrl: "https://sritastykitapp.ccbp.tech/login",
                 features: ["Restaurant Listings", "Shopping Cart", "Checkout System", "Responsive Design"],
                 status: "Live"
@@ -272,7 +274,7 @@ const Home = () => {
                 title: "Jobby App (Job Search Platform)",
                 description: "Developed job portal with authentication, job listings, and application tracking. Implemented protected routes with JWT authentication and persistent login state.",
                 tech: ["React.js", "JavaScript", "CSS", "Bootstrap", "React Router", "REST API", "JWT"],
-                image: "/src/assets/projects/jobby-app.png",
+                image: "/projects/jobby-app.png",
                 liveUrl: "https://varmajobbyapp99.ccbp.tech/",
                 features: ["Job Listings", "Application Tracking", "Protected Routes", "JWT Authentication"],
                 status: "Live"
@@ -292,13 +294,21 @@ const Home = () => {
                   transition={{ duration: 0.3 }}
                 >
                   <div className="relative aspect-video overflow-hidden">
-                    <motion.img
-                      src={project.image}
-                      alt={project.title}
-                      className="w-full h-full object-cover"
-                      whileHover={{ scale: 1.1 }}
-                      transition={{ duration: 0.6 }}
-                    />
+                    {project.image.startsWith('/') ? (
+                      // Public folder image
+                      <motion.img
+                        src={project.image}
+                        alt={project.title}
+                        className="w-full h-full object-cover"
+                        whileHover={{ scale: 1.1 }}
+                        transition={{ duration: 0.6 }}
+                      />
+                    ) : (
+                      // Emoji placeholder
+                      <div className="w-full h-full bg-gradient-to-br from-[#D4AF37]/20 to-[#B8860B]/20 flex items-center justify-center text-8xl">
+                        {project.image}
+                      </div>
+                    )}
                     
                     {/* Gradient Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
