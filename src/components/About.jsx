@@ -2,7 +2,7 @@
  * About page component (JSX)
  * @module About
  */
-import React from 'react';
+
 import { motion } from 'framer-motion';
 import { BookOpen, Briefcase, Award } from 'lucide-react';
 import aboutProfileImage from '../assets/about-profile.jpg';
