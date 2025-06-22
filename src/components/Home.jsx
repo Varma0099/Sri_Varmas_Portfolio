@@ -2,7 +2,7 @@
  * Home page component (JSX)
  * @module Home
  */
-
+import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, ExternalLink, Globe, Database, Zap, Smartphone, Code, Download, Github, Linkedin, Twitter, Mail } from 'lucide-react';
 import profileImage from '../assets/profile.jpg';
