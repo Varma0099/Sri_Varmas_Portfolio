@@ -257,7 +257,7 @@ const Home = () => {
                 description: "Developed a YouTube alternative with user authentication, video browsing by categories (Trending, Gaming), and saved videos functionality. Implemented secure login with JWT tokens.",
                 tech: ["React.js", "JavaScript", "CSS", "Bootstrap", "React Router", "REST API", "JWT"],
                 image: "/projects/nxtwatch-clone.png",
-                liveUrl: "https://varmanxtwatch9.ccbp.tech/",
+                liveUrl: "https://srivarma9nxtwxt.ccbp.tech/",
                 features: ["User Authentication", "Video Categories", "Saved Videos", "JWT Security"],
                 status: "Live"
               },
